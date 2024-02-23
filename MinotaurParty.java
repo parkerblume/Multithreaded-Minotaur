@@ -155,7 +155,6 @@ public class MinotaurParty {
         Labyrinth labyrinth = new Labyrinth(numGuests, printPartySteps);
         Random rand = new Random(System.currentTimeMillis());
 
-        long startTime = System.currentTimeMillis();
         // create our guests, and start the party!
         for (int i = 0; i < numGuests; i++) {
             guests.add(new Guest(labyrinth, i == leader));
@@ -163,7 +162,7 @@ public class MinotaurParty {
 
         System.out.println("Starting the party with [" + numGuests + "] guests!!");
         List<Thread> threads = new ArrayList<>();
-
+        long startTime = System.currentTimeMillis();
         boolean finish = false;
         while (!finish) {
             // "randomly" select the guests each iteration
